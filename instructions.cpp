@@ -1,11 +1,10 @@
 #include "instructions.hpp"
 #include "iostream"
 
-
-void lda(){
-    std::cout << "lda" << std::endl;
+void lda(CPU cpu){
+    std::cout << "1";
 }
 
-void ldb(){
-    std::cout << "ldb" << std::endl;
+void ldb(CPU cpu){
+    std::cout << "2";
 }

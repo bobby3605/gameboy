@@ -1,44 +1,63 @@
-struct registers {
-    struct {
-        union {
-            struct {
-                unsigned char f;
-                unsigned char a;
-            };
-            unsigned short af;
-        };
-    };
+#ifndef __MAIN_H_
+#define __MAIN_H_
 
-    struct {
-        union {
-            struct {
-                unsigned char c;
-                unsigned char b;
-            };
-            unsigned short bc;
+class CPU{
+    public:
+        CPU(){
+            registers.af = 0;
+            registers.bc = 0;
+            registers.de = 0;
+            registers.hl = 0;
+            registers.sp = 0;
+            registers.pc = 0;
+            registers.flags = 0;
         };
-    };
 
-    struct {
-        union {
+        struct registers_s {
             struct {
-                unsigned char e;
-                unsigned char d;
+                union {
+                    struct {
+                        unsigned char f;
+                        unsigned char a;
+                    };
+                    unsigned short af;
+                };
             };
-            unsigned short de;
-        };
-    };
 
-    struct {
-        union {
             struct {
-                unsigned char l;
-                unsigned char h;
+                union {
+                    struct {
+                        unsigned char c;
+                        unsigned char b;
+                    };
+                    unsigned short bc;
+                };
             };
-            unsigned short hl;
+
+            struct {
+                union {
+                    struct {
+                        unsigned char e;
+                        unsigned char d;
+                    };
+                    unsigned short de;
+                };
+            };
+
+            struct {
+                union {
+                    struct {
+                        unsigned char l;
+                        unsigned char h;
+                    };
+                    unsigned short hl;
+                };
+            };
+            unsigned short sp;
+            unsigned short pc;
+            unsigned char flags;
         };
-    };
-    unsigned short sp;
-    unsigned short pc;
-    unsigned char flags;
-}extern registers;
+
+        registers_s registers;
+};
+#endif

@@ -1,9 +1,11 @@
 #include <iostream>
-#include "main.hpp"
 #include "instructions.hpp"
 
+#define runIns(opcode) (ins.function_table[opcode])(cpu)
+
 int main(int argc, char *argv[]) {
-    isa ins;
-    ins.function_table[0]();
+    CPU cpu;
+    ISA ins;
+    runIns(0x00);
     return 0;
 }
