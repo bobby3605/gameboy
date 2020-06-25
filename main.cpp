@@ -1,9 +1,9 @@
 #include <iostream>
-#include "main.h"
-#include "instructions.h"
+#include "main.hpp"
+#include "instructions.hpp"
 
 int main(int argc, char *argv[]) {
     isa ins;
-    std::cout << ins.function_table[0];
+    ins.function_table[0]();
     return 0;
 }

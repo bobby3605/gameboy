@@ -1,6 +1,3 @@
-#ifndef __MAIN_H_
-#define __MAIN_H_
-
 struct registers {
     struct {
         union {
@@ -44,6 +41,4 @@ struct registers {
     unsigned short sp;
     unsigned short pc;
     unsigned char flags;
-}/*extern registers*/;
-
-#endif // __MAIN_H_
+}extern registers;
